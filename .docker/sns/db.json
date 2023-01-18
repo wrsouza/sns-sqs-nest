@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "timestamp": 1672313391563,
+  "subscriptions": [
+    {
+      "arn": "e9126059-9eab-4b37-8194-e0d64dfb2045",
+      "topicArn": "arn:aws:sns:us-east-1:123456789012:test-topic",
+      "endpoint": "aws-sqs://queue1?amazonSQSEndpoint=http://sqs:9324&accessKey=&secretKey=",
+      "owner": "",
+      "protocol": "sqs"
+    },
+    {
+      "arn": "72e11a97-4ca2-4d3d-918f-3df03a4b71af",
+      "topicArn": "arn:aws:sns:us-east-1:123456789012:test-topic",
+      "endpoint": "aws-sqs://queue2?amazonSQSEndpoint=http://sqs:9324&accessKey=&secretKey=",
+      "owner": "",
+      "protocol": "sqs"
+    }
+  ],
+  "topics": [
+    {
+      "arn": "arn:aws:sns:us-east-1:123456789012:test-topic",
+      "name": "test-topic"
+    }
+  ]
+}

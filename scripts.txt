@@ -1,0 +1,12 @@
+docker exec sns sh -c 'aws sns --endpoint-url http://localhost:9911 create-topic --name test-topic'
+
+docker exec sns sh -c 'cat /etc/sns/db.json'
+
+docker exec sns sh -c 'aws sns --endpoint-url http://localhost:9911 subscribe \
+    --topic-arn arn:aws:sns:us-east-1:123456789012:test-topic \
+    --protocol sqs \
+    --notification-endpoint my-email@example.com'
+
+docker exec sns sh -c 'aws sns --endpoint-url http://localhost:9911 delete-topic --topic-arn arn:aws:sns:us-east-1:123456789012:test-topic'
+
+docker exec sqs sh -c 'aws sqs create-queue --queue-name queue1'

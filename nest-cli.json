@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/sns-sqs-nest/src",
+  "monorepo": true,
+  "root": "apps/sns-sqs-nest",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/sns-sqs-nest/tsconfig.app.json"
+  },
+  "projects": {
+    "sns-sqs-nest": {
+      "type": "application",
+      "root": "apps/sns-sqs-nest",
+      "entryFile": "main",
+      "sourceRoot": "apps/sns-sqs-nest/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sns-sqs-nest/tsconfig.app.json"
+      }
+    },
+    "sqs1": {
+      "type": "application",
+      "root": "apps/sqs1",
+      "entryFile": "main",
+      "sourceRoot": "apps/sqs1/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sqs1/tsconfig.app.json"
+      }
+    },
+    "sqs2": {
+      "type": "application",
+      "root": "apps/sqs2",
+      "entryFile": "main",
+      "sourceRoot": "apps/sqs2/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sqs2/tsconfig.app.json"
+      }
+    }
+  }
+}

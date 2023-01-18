@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  sns:
+    image: s12v/sns
+    container_name: sns
+    ports:
+      - 9911:9911
+    volumes:
+      - .docker/sns/db.json:/etc/sns/db.json
+    depends_on:
+      - sqs
+    restart: always
+
+  sqs:
+    image: s12v/elasticmq
+    container_name: sqs
+    ports:
+      - 9324:9324
+    volumes:
+      - .docker/sqs/elasticmq.conf:/etc/elasticmq/elasticmq.conf
+    restart: always
